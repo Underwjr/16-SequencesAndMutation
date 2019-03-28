@@ -65,18 +65,18 @@ def RETURN_delete_negatives(numbers):
       :type numbers: list
     where the list is a list of numbers.
     """
-    new_list = []
-    for k in range(len(numbers)):
-        if numbers[k] >= 0:
-            new_list.append(numbers[k])
-    return new_list
     # new_list = []
     # for k in range(len(numbers)):
-    #     new_list.append(numbers[k])
-    # for k in range(len(new_list)):
-    #     if new_list[k] < 0:
-    #         del new_list[k]
+    #     if numbers[k] >= 0:
+    #         new_list.append(numbers[k])
     # return new_list
+    new_list = []
+    for k in range(len(numbers)):
+        new_list.append(numbers[k])
+    for k in range(len(new_list) - 1, -1, -1):
+        if new_list[k] < 0:
+            del new_list[k]
+    return new_list
 
     # Done: 2. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
